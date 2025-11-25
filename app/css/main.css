@@ -139,3 +139,19 @@
     opacity: 0;
   }
 }
+
+/* QR code
+**********************************/
+
+.qr-code {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  z-index: 9999;
+  border-radius: 10px;
+  background: white;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}

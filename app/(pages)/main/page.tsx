@@ -117,6 +117,12 @@ export default function Main() {
         🍁
       </button>
 
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://unlv-gratitude-wall.vercel.app"
+        alt="QR Code"
+        className="qr-code"
+      />
+
       {/* burst leaves (everyone sees these when *anyone* clicks) */}
       {burstLeaves.map((leaf) => (
         <span
