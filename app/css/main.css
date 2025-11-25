@@ -1,0 +1,141 @@
+.main-container {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* Leafs
+**********************************/
+
+.leaf {
+  position: fixed;
+  top: -100px;
+  font-size: 2em;
+  animation: fall 15s linear infinite;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg);
+  }
+}
+
+/* Title
+**********************************/
+
+.title-section {
+  text-align: center;
+}
+
+.main-title {
+  color: var(--text-0);
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.main-subtitle {
+  color: var(--text-0);
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* Cards
+**********************************/
+.main-content {
+  margin-top: 20px;
+  columns: 4;
+  column-gap: 20px;
+}
+
+.card {
+  background-color: var(--text-0);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.341);
+  break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    columns: 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    columns: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    columns: 1;
+  }
+}
+
+.card-msg {
+  color: var(--text-1);
+}
+
+.card-name {
+  margin-top: 12px;
+  font-weight: bold;
+  text-align: right;
+  color: var(--text-2);
+}
+
+/* Burst leaf
+**********************************/
+
+/* bottom-right button */
+.burst-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 52px;
+  width: 52px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(253, 241, 211, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  z-index: 20;
+}
+
+.burst-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* burst leaves */
+.burst-leaf {
+  position: fixed;
+  bottom: 46px;           /* a little above the button */
+  right: 46px;
+  font-size: 1.8rem;
+  pointer-events: none;
+  animation: leaf-burst 0.8s ease-out forwards;
+  z-index: 15;
+}
+
+/* use CSS vars for random motion */
+@keyframes leaf-burst {
+  0% {
+    transform: translate(0, 0) scale(0.4) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1) rotate(var(--rot));
+    opacity: 0;
+  }
+}

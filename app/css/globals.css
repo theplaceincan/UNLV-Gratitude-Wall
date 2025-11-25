@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  --text-1: #4a4a4a;
+  --text-0: #fbefd2;
+  --text-2: #8b4513;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #8b4513 0%,
+    #d2691e 50%,
+    #cd853f 100%
+  );
+  color: var(--foreground);
+  font-family: "Georgia", serif; 
+}
