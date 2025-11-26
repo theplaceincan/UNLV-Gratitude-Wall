@@ -37,7 +37,7 @@ export default function Main() {
             return t2 - t1; // newest first
           });
           setGratitudes(sorted);
-          setCurrentIndex(0); // always start from newest
+          // setCurrentIndex(0); // always start from newest
         })
         .catch((err) => console.error("Error:", err));
     };
