@@ -31,7 +31,14 @@ export default function Main() {
           message: row.c[1]?.v || "",
           name: row.c[2]?.v || "",
         }));
-        setGratitudes(data.reverse());
+        // Sort by newest (largest timestamp first)
+        const sorted = data.sort((a: any, b: any) => {
+          const t1 = new Date(a.timestamp).getTime();
+          const t2 = new Date(b.timestamp).getTime();
+          return t2 - t1; // newest → oldest
+        });
+
+        setGratitudes(sorted);
       })
       .catch((err) => console.error("Error:", err));
   }, []);
